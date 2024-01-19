@@ -1,0 +1,10 @@
+.date {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.last_row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
