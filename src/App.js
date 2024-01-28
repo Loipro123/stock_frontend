@@ -10,6 +10,7 @@ import axios from 'axios';
 import Nav from './components/nav/nav.component';
 import Home from './pages/home/home.component';
 import Profile from './components/profile/profile.component';
+import Load from './pages/load/load.component';
 import { Routes, Route, Navigate} from "react-router-dom";
 
 const App = ({token,setToken}) => {
@@ -45,6 +46,8 @@ const App = ({token,setToken}) => {
            <Routes>
             <Route exact path="/" element={<Home/>}/>
             <Route exact path="/profile" element={(token===null || user === null) ?  <Navigate to="/"/> : <Profile user={user} setUser={setUser} token={token}/>}/>
+            <Route exact path="/load" element={(token===null || user === null) ?  <Navigate to="/"/> : <Load  token={token}/>}/>
+
             <Route path="*" element={<Navigate to="/"/>}/>
           </Routes>
         </div>

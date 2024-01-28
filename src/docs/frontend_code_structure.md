@@ -2,11 +2,10 @@
 
 ## Overview
 
-This section provides a high-level overview of the front-end architecture and the purpose of major components.
-
+the purpose of this application is to show the stock analyst and keep track of the trading process
 ### Architecture
 
-Explain the overall architecture, such as whether it follows a monolithic or microservices approach.
+The applicatoin follows a monolithic model
 
 ## Folder Structure
 
@@ -15,33 +14,37 @@ Describe the organization of your React application's folders and key files.
 ### /src
 
 - `/components`: Contains reusable React components.
-- `/containers`: Higher-level components that manage state and connect to Redux.
+- `/assets`: Images, fonts, and other static assets
 - `/pages`: Top-level components representing different pages or views.
-- `/styles`: Global styles, themes, or utility classes.
 - `/utils`: Utility functions and helper modules.
+- `/services`: API calls, utilities, and other services.
+- `/redux` : Redux store, actions, and reducers.
+|   |-- actions
+|   |-- reducers
+|   |-- store
 
-### /public
+## pages
 
-- Static assets like images, fonts, and the `index.html` file.
+### `Home`
+
+- display the current stock market and information.
 
 ## Components
 
 List and describe the major React components, their responsibilities, and interactions.
 
-### `Header`
+### `Nav`
 
 - Displays the application header.
 - Navigation links and user-related information.
 
-### `HomePage`
+### `Login`
 
-- Landing page of the application.
-- Shows featured content or highlights.
+- Allow user to log and sign up
 
-### `PostList`
+### `Profile`
 
-- Renders a list of posts.
-- Used in multiple views.
+- Allow user to update there profile
 
 ## State Management
 
