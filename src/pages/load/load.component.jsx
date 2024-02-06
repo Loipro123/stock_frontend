@@ -4,7 +4,7 @@ import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Box from '@mui/material/Box';
 import LoadData from '../../components/load_data/load_data.component';
-
+import LoadDaily from '../../components/load_daily/load_daily.component';
 function CustomTabPanel(props) {
   const { children, value, index, ...other } = props;
 
@@ -49,6 +49,7 @@ const Load = ({token}) => {
         <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
           <Tab label="Load Data" {...a11yProps(0)} />
           <Tab label="Add new stock" {...a11yProps(1)} />
+          <Tab label="Add daily stock" {...a11yProps(2)} />
         </Tabs>
       </Box>
       <CustomTabPanel value={value} index={0}>
@@ -56,6 +57,9 @@ const Load = ({token}) => {
       </CustomTabPanel>
       <CustomTabPanel value={value} index={1}>
         Load New Stock
+      </CustomTabPanel>
+      <CustomTabPanel value={value} index={2}>
+        <LoadDaily token={token}/>
       </CustomTabPanel>
     </Box>
   );

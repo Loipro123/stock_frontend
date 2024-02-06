@@ -12,6 +12,7 @@ import Home from './pages/home/home.component';
 import Profile from './components/profile/profile.component';
 import Load from './pages/load/load.component';
 import { Routes, Route, Navigate} from "react-router-dom";
+import Tracking from './components/tracking/tracking.component';
 
 const App = ({token,setToken}) => {
   const [user,setUser] = useState(null);
@@ -47,6 +48,7 @@ const App = ({token,setToken}) => {
             <Route exact path="/" element={<Home/>}/>
             <Route exact path="/profile" element={(token===null || user === null) ?  <Navigate to="/"/> : <Profile user={user} setUser={setUser} token={token}/>}/>
             <Route exact path="/load" element={(token===null || user === null) ?  <Navigate to="/"/> : <Load  token={token}/>}/>
+            <Route exact path="/tracking" element={(token===null || user === null) ?  <Navigate to="/"/> : <Tracking  token={token}/>}/>
 
             <Route path="*" element={<Navigate to="/"/>}/>
           </Routes>
