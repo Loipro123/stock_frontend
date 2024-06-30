@@ -1,0 +1,48 @@
+.soccer_analyst{
+    display: flex;
+    margin: 20px 0px;
+
+}
+
+.soccer_league{
+    width: 25%;
+    border-right: 1px solid black;
+
+}
+
+.soccer_diagram{
+    width: 75%;
+}
+
+.filter{
+    display: flex;
+    gap: 20px;
+    margin: 10px;
+}
+
+.scrollable-checkbox{
+    display: flex;
+    flex-direction: column;
+}
+
+.his_table{
+    display: flex;
+    margin: 10px 20px;
+}
+
+.his1{
+    width: 50%;
+    border-right: 1px solid black;
+
+}
+
+.his2{
+    width: 50%;
+
+}
+
+.title{
+    text-align: center;
+    padding: 10px;
+    border-bottom: 1px solid black;
+}

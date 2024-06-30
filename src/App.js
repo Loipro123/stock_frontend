@@ -13,6 +13,7 @@ import Profile from './components/profile/profile.component';
 import Load from './pages/load/load.component';
 import { Routes, Route, Navigate} from "react-router-dom";
 import Tracking from './components/tracking/tracking.component';
+import Soccer from './pages/soccer/soccer.component';
 
 const App = ({token,setToken}) => {
   const [user,setUser] = useState(null);
@@ -45,11 +46,11 @@ const App = ({token,setToken}) => {
         <div>
            <Nav user={user}/>
            <Routes>
-            <Route exact path="/" element={<Home/>}/>
+            <Route exact path="/" element={<Home token={token}/>}/>
             <Route exact path="/profile" element={(token===null || user === null) ?  <Navigate to="/"/> : <Profile user={user} setUser={setUser} token={token}/>}/>
             <Route exact path="/load" element={(token===null || user === null) ?  <Navigate to="/"/> : <Load  token={token}/>}/>
             <Route exact path="/tracking" element={(token===null || user === null) ?  <Navigate to="/"/> : <Tracking  token={token}/>}/>
-
+            <Route exact path="/soccer" element={(token===null || user === null) ?  <Navigate to="/"/> : <Soccer  token={token}/>}/>
             <Route path="*" element={<Navigate to="/"/>}/>
           </Routes>
         </div>

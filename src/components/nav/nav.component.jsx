@@ -125,6 +125,14 @@ const Nav = ({setToken,user}) => {
                   <div>Load Data</div>
 
                 </MenuItem>
+                <MenuItem onClick={() => {
+                        handleCloseNavMenu();
+                        navigate('/soccer');
+                }}>
+                  {/* <Typography textAlign="center" >{page}</Typography> */}
+                  <div>Soccer</div>
+
+                </MenuItem>
             </Menu>
           </Box>
           
@@ -158,6 +166,16 @@ const Nav = ({setToken,user}) => {
                 style={{textDecoration:'underline'}}
               >
                Load Data
+              </Button>
+              <Button
+                onClick={()=>{
+                  handleCloseNavMenu();
+                  navigate('/soccer');
+                }}
+                sx={{ my: 2, color: 'white', display: 'block' }}
+                style={{textDecoration:'underline'}}
+              >
+               Soccer
               </Button>
           </Box>
 

@@ -1,0 +1,16 @@
+.data-key1 {
+    font-weight: bold;
+    text-align: left;
+    padding-right: 5px;
+    /* background-color: #f4f4f4; */
+}
+.data-value1 {
+    text-align: left;
+}
+
+
+.stock_detail1{
+    display: flex;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.36);
+    padding: 10px 0px;
+}

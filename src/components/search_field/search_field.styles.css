@@ -1,0 +1,12 @@
+.searchInput {
+    width: 250px;
+    height: 42px;
+    border-radius: 12px;
+    padding: 0 10px;
+    font-size: 16px;
+    outline: none;
+    border: 1px solid rgba(128, 128, 128, 0.37);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    margin-right: 20px;
+  }
+  
