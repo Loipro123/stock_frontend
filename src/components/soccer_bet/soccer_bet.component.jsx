@@ -40,6 +40,7 @@ import Fab from '@mui/material/Fab';
 import ErrorIconWithTooltip from '../../reuse_component/error_icon/error_icon.component';
 import SearchInput from '../search_field/search_field.component';
 import SoccerAnalyst from '../soccer_analyst/soccer_analyst.component';
+import SoccerReason from '../soccer_reason/soccer_reason.component';
 const SoccerBet = ({token}) => {
     const [tableData, setTableData] = useState([]);
     const [rowEdit,setRowEdit] = useState([]);
@@ -281,7 +282,27 @@ export const EditAccountModal = ({ open, onClose, title, rowEdit,token,setReload
   const [soccerAnalystOver,setSoccerAnalystOver] = useState(false);
   const [soccerAnalystRatio,setSoccerAnalystRatio] = useState(false);
 
+  const [team1Motivation, setTeam1Motivation] = useState('medium');
+  const [team2Motivation, setTeam2Motivation] = useState('medium');
+  const [team1Notes, setTeam1Notes] = useState('');
+  const [team2Notes, setTeam2Notes] = useState('');
 
+  const [team1DefensivePower, setTeam1DefensivePower] = useState('medium');
+  const [team2DefensivePower, setTeam2DefensivePower] = useState('medium');
+  const [team1DefenseNotes, setTeam1DefenseNotes] = useState('');
+  const [team2DefenseNotes, setTeam2DefenseNotes] = useState('');
+
+  const [team1FeelingWin, setTeam1FeelingWin] = useState('medium');
+  const [team2FeelingWin, setTeam2FeelingWin] = useState('medium');
+  const [team1FeelingWinNotes, setTeam1FeelingWinNotes] = useState('');
+  const [team2FeelingWinNotes, setTeam2FeelingWinNotes] = useState('');
+
+  const [team1OffensivePower, setTeam1OffensivePower] = useState('medium');
+  const [team2OffensivePower, setTeam2OffensivePower] = useState('medium');
+  const [team1OffenseNotes, setTeam1OffenseNotes] = useState('');
+  const [team2OffenseNotes, setTeam2OffenseNotes] = useState('');
+
+  
 
   useEffect(() => {
     const fetchData = async () => {
@@ -418,7 +439,27 @@ const removeJobRatio = (index) => {
       expert:expert,
       expert_choose: expertChooseTeam,
       confident_level: confidentTeam,
-      reason_bet: reasonNew.join(';')
+      reason_bet: reasonNew.join(';'),
+      team1Motivation,
+      team2Motivation,
+      team1Notes,
+      team2Notes,
+      team1DefensivePower,
+      team2DefensivePower,
+      team1DefenseNotes,
+      team2DefenseNotes,
+      
+      team1OffensivePower,
+      team2OffensivePower,
+      team1OffenseNotes,
+      team2OffenseNotes,
+    
+      team1FeelingWin,
+      team2FeelingWin,
+      team1FeelingWinNotes,
+      team2FeelingWinNotes,
+    
+  
     }
 
 
@@ -469,7 +510,25 @@ const removeJobRatio = (index) => {
       expert: expertOver,
       expert_choose: expertChooseTeamOver,
       confident_level: confidentTeamOver,
-      reason_bet: reasonNew.join(';')
+      reason_bet: reasonNew.join(';'),
+      team1Motivation,
+      team2Motivation,
+      team1Notes,
+      team2Notes,
+      team1DefensivePower,
+      team2DefensivePower,
+      team1DefenseNotes,
+      team2DefenseNotes,
+      
+      team1OffensivePower,
+      team2OffensivePower,
+      team1OffenseNotes,
+      team2OffenseNotes,
+    
+      team1FeelingWin,
+      team2FeelingWin,
+      team1FeelingWinNotes,
+      team2FeelingWinNotes,
     }
 
 
@@ -522,7 +581,25 @@ const removeJobRatio = (index) => {
       expert:expertRatio,
       expert_choose: expertChooseTeamRatio,
       confident_level: confidentTeamRatio,
-      reason_bet: reasonNew.join(';')
+      reason_bet: reasonNew.join(';'),
+      team1Motivation,
+      team2Motivation,
+      team1Notes,
+      team2Notes,
+      team1DefensivePower,
+      team2DefensivePower,
+      team1DefenseNotes,
+      team2DefenseNotes,
+      
+      team1OffensivePower,
+      team2OffensivePower,
+      team1OffenseNotes,
+      team2OffenseNotes,
+    
+      team1FeelingWin,
+      team2FeelingWin,
+      team1FeelingWinNotes,
+      team2FeelingWinNotes
     }
 
 
@@ -551,11 +628,11 @@ const removeJobRatio = (index) => {
       <DialogTitle textAlign="center" style={{color:'#C265A6', fontWeight:'bolder'}}>{match.league_name}</DialogTitle>
       <DialogContent style={{padding:'10px 40px', display:'flex', flexDirection:'column',gap: '20px'}}>
         <div className='teambet'>
-        <div style={{display:'flex', padding:'20px', alignItems:'center',gap:'10px',borderBottom:'1px solid grey'}}>
-          <div style={{fontSize:'20px', fontWeight:'bolder'}}>Team betting</div>
-          <div>-</div>
+        <div style={{display:'flex', padding:'20px', alignItems:'center',gap:'10px'}}>
           <div style={{color:'blue',textDecoration:'underline',cursor:'pointer'}} onClick={()=> {setSoccerAnalystTeam(!soccerAnalystTeam)}}>{soccerAnalystTeam ? 'Close Analyst' : 'Do Analyst'}</div>
         </div>
+
+
         {
           soccerAnalystTeam ? <SoccerAnalyst token={token} type={'team'} data={{
             league_name: [match.league_name],
@@ -605,8 +682,49 @@ const removeJobRatio = (index) => {
         </TableBody>
       </Table>
       <div style={{borderBottom:'1px solid grey', borderTop:'1px solid grey', padding:'20px',margin:'20px 0'}}>
-              <div style={{margin: '10px 0', fontSize:'20px', fontWeight:'bolder'}}>Pick Team</div>
+              
+              {/* // */}
+              <SoccerReason        team1Motivation={team1Motivation}
+        team2Motivation={team2Motivation}
+        team1Notes={team1Notes}
+        team2Notes={team2Notes}
+        setTeam1Motivation={setTeam1Motivation}
+        setTeam2Motivation={setTeam2Motivation}
+        setTeam1Notes={setTeam1Notes}
+        setTeam2Notes={setTeam2Notes}
 
+        team1DefensivePower={team1DefensivePower}
+        team2DefensivePower={team2DefensivePower}
+        team1DefenseNotes={team1DefenseNotes}
+        team2DefenseNotes={team2DefenseNotes}
+        setTeam1DefensivePower={setTeam1DefensivePower}
+        setTeam2DefensivePower={setTeam2DefensivePower}
+        setTeam1DefenseNotes={setTeam1DefenseNotes}
+        setTeam2DefenseNotes={setTeam2DefenseNotes}
+
+        team1OffensivePower={team1OffensivePower}
+        team2OffensivePower={team2OffensivePower}
+        team1OffenseNotes={team1OffenseNotes}
+        team2OffenseNotes={team2OffenseNotes}
+        setTeam1OffensivePower={setTeam1OffensivePower}
+        setTeam2OffensivePower={setTeam2OffensivePower}
+        setTeam1OffenseNotes={setTeam1OffenseNotes}
+        setTeam2OffenseNotes={setTeam2OffenseNotes}
+        team1FeelingWin={team1FeelingWin}
+        team2FeelingWin={team2FeelingWin}
+        team1FeelingWinNotes={team1FeelingWinNotes}
+        team2FeelingWinNotes={team2FeelingWinNotes}
+        setTeam1FeelingWin={setTeam1FeelingWin}
+        setTeam2FeelingWin={setTeam2FeelingWin}
+        setTeam1FeelingWinNotes={setTeam1FeelingWinNotes}
+        setTeam2FeelingWinNotes={setTeam2FeelingWinNotes}
+        
+        team1={match.team1}
+        team2={match.team2}
+
+        />
+        <div style={{fontSize:'20px', fontWeight:'bolder',padding:'20px',borderBottom:'1px solid grey'}}>Team betting</div>
+        <div style={{margin: '10px 0', fontSize:'20px', fontWeight:'bolder'}}>Pick Team</div>
                <div >
                     <label>
                         <input
@@ -776,8 +894,6 @@ const removeJobRatio = (index) => {
       <div className='teambet'>
         <div style={{display:'flex', padding:'20px', alignItems:'center',gap:'10px',borderBottom:'1px solid grey'}}>
           <div style={{fontSize:'20px', fontWeight:'bolder'}}>Over/Under betting</div>
-          <div>-</div>
-          <div style={{color:'blue',textDecoration:'underline',cursor:'pointer'}}>Do analyst</div>
         </div>
         <Table sx={{ minWidth: 1000 }} aria-label="simple table">
         <TableHead>
@@ -984,8 +1100,6 @@ const removeJobRatio = (index) => {
         <div className='teambet'>
         <div style={{display:'flex', padding:'20px', alignItems:'center',gap:'10px',borderBottom:'1px solid grey'}}>
           <div style={{fontSize:'20px', fontWeight:'bolder'}}>Europe Ratio Betting</div>
-          <div>-</div>
-          <div style={{color:'blue',textDecoration:'underline',cursor:'pointer'}}>Do analyst</div>
         </div>
         <Table sx={{ minWidth: 1000 }} aria-label="simple table">
         <TableHead>
